@@ -21,7 +21,6 @@ MarkupSafe==2.1.1
 numpy==1.22.4
 orjson==3.8.0
 pandas==1.4.3
-pfp-api @ file:///Users/ayshjag/pfp-api
 pydantic==1.10.2
 pyparsing==3.0.9
 python-dateutil==2.8.2
