@@ -1,6 +1,6 @@
 from http.client import HTTPException
 from typing import List
-from fastapi import FastAPI
+from fastapi import FastAPI,Request
 from uuid import UUID,uuid4
 from models import User,Gender,Role, UserUpdateRequest
 app = FastAPI()
@@ -56,6 +56,13 @@ async def update_user(user_update:UserUpdateRequest,user_id:UUID):
         status_code=404,
         detail=f"user withid:{user_id} does not exists"
     )
+@app.post("/getproviderinfo")
+async def getproviderinfo(info:Request):
+    req_info =await info.json()
+    return {
+        "status":"Success",
+        "data":req_info
+    }
         
 
 
